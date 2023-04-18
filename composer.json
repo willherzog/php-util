@@ -1,0 +1,21 @@
+{
+	"name": "willherzog/php-util",
+	"description": "Some general PHP utilities.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Will Herzog",
+            "email": "willherzog@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+		"php": "^8.2"
+	},
+    "autoload": {
+        "psr-4": {
+            "WHPHP\\": "src/"
+        }
+    }
+}
