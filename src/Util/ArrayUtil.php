@@ -59,7 +59,7 @@ final class ArrayUtil
 	/**
 	 * Adds a value to an array by reference if not already present.
 	 *
-	 * @return Whether $value was added to $array
+	 * @return bool Whether $value was added to $array
 	 */
 	static public function addValue (array &$array, $value): bool
 	{
@@ -75,7 +75,7 @@ final class ArrayUtil
 	/**
 	 * Removes a value from an array by reference if present.
 	 *
-	 * @return Whether $array contained $value
+	 * @return bool Whether $array contained $value
 	 */
 	static public function removeValue (array &$array, $value): bool
 	{
@@ -96,7 +96,7 @@ final class ArrayUtil
 	 * @param $array The array to flatten
 	 * @param $recursively Whether to call this method recursively if $array is multi-dimensional
 	 *
-	 * @return The single value, or the unmodified array if it contains more than one value
+	 * @return mixed The single value, or the unmodified array if it contains more than one value
 	 */
 	static public function flatten (array $array, bool $recursively = false): mixed
 	{
@@ -124,7 +124,7 @@ final class ArrayUtil
 	 * @param $requireOnly Whether all keys of $array must be present in $keys
 	 * @param $mustNotBeEmpty Whether all values of $array must be non-empty and non-null
 	 *
-	 * @return Whether or not the key(s) were found.
+	 * @return bool Whether or not the key(s) were found.
 	 */
 	static public function hasKeys (array $array, array $keys, bool $requireAll = true, bool $requireOnly = false, bool $mustNotBeEmpty = false): bool {
 		$matchFound = false;
