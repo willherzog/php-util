@@ -99,4 +99,21 @@ final class StringUtil
 	{
 		return str_contains($str, '.') ? (float) $str : (int) $str;
 	}
+
+	/**
+	 * @param string $str The string to be converted
+	 * @param bool $preserveDoubleUnderscores If TRUE, double underscores ("__") are not converted to dashes; defaults to FALSE
+	 */
+	static public function convertUnderscoresToDashes(string $str, bool $preserveDoubleUnderscores = false)
+	{
+		if( str_contains($str, '_') ) {
+			if( $preserveDoubleUnderscores ) {
+				$str = str_replace(['__','_','++'], ['++','-','__'], $str);
+			} else {
+				$str = str_replace('_', '-', $str);
+			}
+		}
+
+		return $str;
+	}
 }
