@@ -116,4 +116,12 @@ final class StringUtil
 
 		return $str;
 	}
+
+	/**
+	 * Remove all space, tab, line feed, carriage return and vertical tab characters from a string value.
+	 */
+	static public function stripWhiteSpace(string $str): string
+	{
+		return str_replace([' ', "\t", "\n", "\r", "\v"], '', $str);
+	}
 }
