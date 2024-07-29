@@ -4,7 +4,7 @@ namespace WHPHP\Bag;
 
 /**
  * Generic interface for "bag" classes.
- * Inspired by PropertyBag from symfony/http-foundation.
+ * Inspired by {@link Symfony\Component\HttpFoundation\PropertyBag}.
  *
  * @author Will Herzog <willherzog@gmail.com>
  */

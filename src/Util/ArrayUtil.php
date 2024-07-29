@@ -15,7 +15,7 @@ final class ArrayUtil
 	/**
 	 * Determines whether the given array is indexed and not associative (i.e. all keys are integers).
 	 *
-	 * The PHP 8.1+ native function array_is_list() is a preferred alternative, *except* if the keys may not be 0-based and/or consecutive.
+	 * The PHP 8.1+ native function {@link array_is_list()} is a preferred alternative, *except* if the keys may not be 0-based and/or consecutive.
 	 */
 	static public function isIndexed (array $array): bool
 	{
@@ -59,7 +59,7 @@ final class ArrayUtil
 	/**
 	 * Adds a value to an array by reference if not already present.
 	 *
-	 * @return bool Whether $value was added to $array
+	 * @return bool Whether `$value` was added to `$array`
 	 */
 	static public function addValue (array &$array, $value): bool
 	{
@@ -75,7 +75,7 @@ final class ArrayUtil
 	/**
 	 * Removes a value from an array by reference if present.
 	 *
-	 * @return bool Whether $array contained $value
+	 * @return bool Whether `$array` contained `$value`
 	 */
 	static public function removeValue (array &$array, $value): bool
 	{
@@ -94,7 +94,7 @@ final class ArrayUtil
 	 * Reduces an array with only a single value to just that value.
 	 *
 	 * @param $array The array to flatten
-	 * @param $recursively Whether to call this method recursively if $array is multi-dimensional
+	 * @param $recursively Whether to call this method recursively (i.e. if `$array` is multi-dimensional)
 	 *
 	 * @return mixed The single value, or the unmodified array if it contains more than one value
 	 */
@@ -116,13 +116,13 @@ final class ArrayUtil
 	/**
 	 * Checks if any number of keys are present in an array.
 	 *
-	 * @uses self::removeValue()
+	 * @uses `self::removeValue()`
 	 *
 	 * @param $array The array to be checked
 	 * @param string[] $keys Non-associative array of keys
-	 * @param $requireAll Whether all $keys must be present in $array (if more than one)
-	 * @param $requireOnly Whether all keys of $array must be present in $keys
-	 * @param $mustNotBeEmpty Whether all values of $array must be non-empty and non-null
+	 * @param $requireAll Whether all `$keys` must be present in `$array` (if more than one)
+	 * @param $requireOnly Whether all keys of `$array` must be present in `$keys`
+	 * @param $mustNotBeEmpty Whether all values of `$array` must be non-empty and non-null
 	 *
 	 * @return bool Whether or not the key(s) were found.
 	 */
@@ -151,7 +151,7 @@ final class ArrayUtil
 	/**
 	 * Finds the next-lowest unused array index beginning with the given integer.
 	 *
-	 * @uses self::isIndexed()
+	 * @uses `self::isIndexed()`
 	 */
 	static public function getNextAvailableIndex (array $indexedArray, int $index): int
 	{

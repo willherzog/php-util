@@ -13,13 +13,13 @@ final class UrlUtil
 	{}
 
 	/**
-	 * Uses http_build_query() to convert an array to a valid URL query string and safely† appends it to (and then returns) the given $url string.
-	 * † "safely" meaning that this function accounts for whether the $url argument already has query parameters or already ends with a "?".
+	 * Uses {@link http_build_query()} to convert an array to a valid URL query string and safely† appends it to (and then returns) the given `$url` string.
+	 * † "safely" meaning that this function accounts for whether the `$url` argument already has query parameters or already ends with a "?".
 	 *
 	 * @param string $url
 	 * @param array $queryParams
-	 * @param int $encodingType Optional; defaults to (constant) PHP_QUERY_RFC1738, but you can also use (constant) PHP_QUERY_RFC3986
-	 * @param string $numericPrefix Optional; see the official documentation for http_build_query(): <https://www.php.net/manual/en/function.http-build-query.php>
+	 * @param int $encodingType Optional; defaults to (constant) `PHP_QUERY_RFC1738`, but you can also use (constant) `PHP_QUERY_RFC3986`
+	 * @param string $numericPrefix Optional; see the official documentation for {@link http_build_query()}: <https://www.php.net/manual/en/function.http-build-query.php>
 	 * @param string $querySeparator Optional; defaults to ampersand (i.e. "&")
 	 */
 	static public function appendUrlQueryParams(string $url, array $queryParams, int $encodingType = \PHP_QUERY_RFC1738, string $numericPrefix = '', string $querySeparator = '&'): string

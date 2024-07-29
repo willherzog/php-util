@@ -13,8 +13,9 @@ final class StringUtil
 	{}
 
 	/**
-	 * Determines whether a string contains another string; wrapper for mb_strpos() which only returns TRUE or FALSE.
-	 * Note that str_contains() should be used instead for machine language operations.
+	 * Determines whether a string contains another string; wrapper for {@link mb_strpos()} which only returns TRUE or FALSE.
+	 *
+	 * Note that {@link str_contains()} should be used instead for machine language operations.
 	 */
 	static public function containsSingle(string $needle, string $haystack): bool
 	{
@@ -22,6 +23,8 @@ final class StringUtil
 	}
 
 	/**
+	 * @deprecated Use `self::containsAny()` or `self::containsAll()` instead
+	 *
 	 * Determines whether a string contains some or all of multiple strings.
 	 *
 	 * @param string[] $needles The strings to search for
@@ -30,25 +33,47 @@ final class StringUtil
 	 */
 	static public function containsMultiple(array $needles, string $haystack, bool $requireAll = false): bool
 	{
-		$matchFound = false;
+		if( $requireAll ) {
+			return self::containsAll($needles, $haystack);
+		} else {
+			return self::containsAny($needles, $haystack);
+		}
+	}
 
+	/**
+	 * Determines whether a string haystack contains any of multiple string needles (using {@link mb_strpos()}).
+	 */
+	static public function containsAny(array $needles, string $haystack): bool
+	{
 		foreach( $needles as $needle ) {
 			if( !is_string($needle) ) {
 				continue;
 			}
 
 			if( mb_strpos($haystack, $needle) !== false ) {
-				$matchFound = true;
-			} elseif( $requireAll ) {
-				return false;
-			}
-
-			if( $matchFound && !$requireAll ) {
-				break;
+				return true;
 			}
 		}
 
-		return $matchFound;
+		return false;
+	}
+
+	/**
+	 * Determines whether a string haystack contains all of multiple string needles (using {@link mb_strpos()}).
+	 */
+	static public function containsAll(array $needles, string $haystack): bool
+	{
+		foreach( $needles as $needle ) {
+			if( !is_string($needle) ) {
+				continue;
+			}
+
+			if( mb_strpos($haystack, $needle) === false ) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**
@@ -93,7 +118,7 @@ final class StringUtil
 	}
 
 	/**
-	 * Converts a string for which is_numeric() returns TRUE to an integer or float based on absence or presence of a period character, respectively.
+	 * Converts a string for which {@link is_numeric()} returns TRUE to an integer or float based on absence or presence of a period character, respectively.
 	 */
 	static public function convertStringToNumber(string $str): int|float
 	{

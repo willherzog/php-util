@@ -8,7 +8,8 @@ use UnexpectedValueException;
 
 /**
  * Methods for formatting a DateTime object using the PHP Intl extension.
- * Note that the locale for the extension is set with \Locale::setDefault().
+ *
+ * Note that the locale for the Intl extension is set with {@link Locale::setDefault()}.
  *
  * @author Will Herzog <willherzog@gmail.com>
  */
