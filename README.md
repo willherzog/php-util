@@ -16,7 +16,7 @@ Static Utility Methods:
 * `containsAll()` – Determine whether a string haystack contains all of multiple string needles (multibyte-friendly).
 * `convertFloatToString()` – Convert a floating point number to a string, ensuring that all (and only) excess leading and trailing zeroes have been stripped off.
 * `convertEquivalentStringToBoolean()` – Convert "True"|"TRUE"|"true"|"False"|"FALSE"|"false" to the appropriate boolean equivalent. All other strings are returned as-is.
-* `convertStringToNumber()` – Convert a string for which _`is_numeric()`_ returns `true` to an integer or float (based on absence or presence of a period character, respectively).
+* `convertStringToNumber()` – Convert a string for which _`is_numeric()`_ returns `true` to an integer or float (based on absence or presence of a period/dot character (`.`), respectively).
 * `convertUnderscoresToDashes()` – Convert a string in _snake_ case (e.g. "convert_underscores_to_dashes") to _kebab_ case (e.g. "convert-underscores-to-dashes"). The effect is similar to the `->kebab()` method of the concrete classes of the Symfony String component, except without the ability to act on arbitrary input strings (i.e. ones not already in snake case). This method can also optionally preserve any _double_ underscores by setting its second argument to `true`.
 * `stripWhiteSpace()` – Remove all space, tab, line feed, carriage return and vertical tab characters from a string value.
 
