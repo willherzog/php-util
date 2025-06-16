@@ -12,8 +12,8 @@ Include path: `WHPHP\Util\StringUtil`
 Static Utility Methods:
 
 * `containsSingle()` – Multibyte-friendly alternative to the PHP native function _`str_contains()`_ (the native function should be preferred whenever the input string contains no multibyte characters).
-* `containsAny()` – Determine whether a string haystack contains any of multiple string needles (multibute-friendly).
-* `containsAll()` – Determine whether a string haystack contains all of multiple string needles (multibute-friendly).
+* `containsAny()` – Determine whether a string haystack contains any of multiple string needles (multibyte-friendly).
+* `containsAll()` – Determine whether a string haystack contains all of multiple string needles (multibyte-friendly).
 * `convertFloatToString()` – Convert a floating point number to a string, ensuring that all (and only) excess leading and trailing zeroes have been stripped off.
 * `convertEquivalentStringToBoolean()` – Convert "True"|"TRUE"|"true"|"False"|"FALSE"|"false" to the appropriate boolean equivalent. All other strings are returned as-is.
 * `convertStringToNumber()` – Convert a string for which _`is_numeric()`_ returns `true` to an integer or float (based on absence or presence of a period character, respectively).
