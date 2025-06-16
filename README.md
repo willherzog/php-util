@@ -2,4 +2,4 @@
  Some general PHP utilities:
  * `StringUtil`, `ArrayUtil`, `UrlUtil`, `DateTimeUtil` and `IntlDateUtil` with various static utility methods
  * `InvalidArgumentTypeException`, which generates an automatic, type-based error message
- * `GenericBag` interface
+ * `GenericBag` interface, which is similar to—but more generic than—Symfony’s `ParameterBag` class
