@@ -152,6 +152,8 @@ final class ArrayUtil
 	 * Finds the next-lowest unused array index beginning with the given integer.
 	 *
 	 * @uses `self::isIndexed()`
+	 *
+	 * @throws \UnexpectedValueException If the input array is not an indexed array
 	 */
 	static public function getNextAvailableIndex (array $indexedArray, int $index): int
 	{
